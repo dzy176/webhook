@@ -9,7 +9,7 @@ import (
 )
 
 func push(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "triger")
+	fmt.Println(w, "triger")
 }
 
 func main() {
