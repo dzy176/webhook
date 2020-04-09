@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"log"
 	"net/http"
@@ -9,7 +10,9 @@ import (
 )
 
 func push(w http.ResponseWriter, r *http.Request) {
-	fmt.Println(w, "triger")
+	fmt.Println("request: ")
+	s, _ := json.Marshal(r)
+	fmt.Println(string(s))
 }
 
 func main() {
