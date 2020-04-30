@@ -11,12 +11,13 @@ import (
 var logger *zap.Logger
 
 func push(w http.ResponseWriter, r *http.Request) {
-	logger.Info("sync files from git")
+	logger.Info("sync from git and build")
 	cmd := exec.Command("/bin/sh", "update.sh")
 	err := cmd.Run()
 	if err != nil {
 		logger.Error(err.Error())
 	}
+	logger.Info("done")
 }
 
 func main() {
